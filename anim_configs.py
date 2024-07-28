@@ -29,7 +29,7 @@ animator_configs = {
         "erase_canvas": 10,
     },
 
-    # Single Bezier curve is rendered in one frame
+    # Renders radial lines of circles
     "RADIALIZOR": {
         "angle_gap": 6, # degrees
         "render_time_gap": 0.01,

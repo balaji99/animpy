@@ -71,19 +71,19 @@ To generate an animation using the existing `RADIALIZOR` animation and save it a
 
 ## Creating your own animation type
 1. Create a Python class (say `new_animator`) and store in a Python file (say `new_anim.py`) in the `animators` directory. For examples, look how the existing Python classes there are structured.
-1a. Every class must have at least three methods defined - constructor, `setup` and `draw_frame`.
-1b. The constructor must accept a dict `anim_config` - this contains various configuration items that can be used by the animator object.
-1c. The `setup` function is called just before the animation begins. The animator object can use this opportunity to make preparations to draw frames.
-1d. The `draw_frame` function is called when the animation engine wants to render the next frame in series. This function must accept three arguments - `frame_num` and `frame`. `frame_num` represents the sequence number of the frame (the first frame's sequence number is 0). `frame` is the actual 2D array that represents the image frame. This frame is not cleared by the animation engine each time `draw_frame` is called, which means it contains the results of the previous calls to `draw_frame`. In the current call to `draw_frame`, the function can modify the contents of the frame, and that frame will be stored in the output video.
+   1a. Every class must have at least three methods defined - constructor, `setup` and `draw_frame`.
+   1b. The constructor must accept a dict `anim_config` - this contains various configuration items that can be used by the animator object.
+   1c. The `setup` function is called just before the animation begins. The animator object can use this opportunity to make preparations to draw frames.
+   1d. The `draw_frame` function is called when the animation engine wants to render the next frame in series. This function must accept three arguments - `frame_num` and `frame`. `frame_num` represents the sequence number of the frame (the first frame's sequence number is 0). `frame` is the actual 2D array that represents the image frame. This frame is not cleared by the animation engine each time `draw_frame` is called, which means it contains the results of the previous calls to `draw_frame`. In the current call to `draw_frame`, the function can modify the contents of the frame, and that frame will be stored in the output video.
 2. Add a reference to the new animator script in `animators\all.py` like so:
 from . import new_anim
 3. In anim_configs.py, add a line for the new animator in the animator_classes dict, like so
 `"NEW_ANIM": animators.new_anim.new_animator,`
-3a. In anim_configs.py, add a dict for the new animator in the animator_configs dict, like so
+   3a. In anim_configs.py, add a dict for the new animator in the animator_configs dict, like so
     "NEW_ANIM": {
         "background_color": (0, 180, 240),
     },
-3b. Add as many elements in the NEW_ANIM dict, as required. The `new_animator` class can read these config values and process them as needed.
+   3b. Add as many elements in the NEW_ANIM dict, as required. The `new_animator` class can read these config values and process them as needed.
 4. Set `ANIMATION_CLASS_ID` to `"NEW_ANIM"` in `anim_engine.py`. 
 
 

@@ -78,6 +78,10 @@ class radializor:
         for _ in range(n):
             self.circles.add(self.circ(self.width, self.height, self.angle_gap, self.line_width, self.color))
 
+            if random.randint(0, 1000) == 0:
+                self.init_color = common.random_rgb_color()
+                self.color = self.init_color.copy()
+                
             self.color[self.color_index] += self.color_delta
             if self.color[self.color_index] > 255:
                 self.color[self.color_index] = 255

@@ -8,7 +8,7 @@ import anim_configs
 # Global variables
 VIDEO_LENGTH = 600  # in seconds
 VIDEO_FRAME_RATE = 100  # Frame rate (fps) of the output video
-VIDEO_FRAME_SIZE = (1920, 1080)  # Full HD resolution
+VIDEO_FRAME_SIZE = (1920, 1080)  # Output video resolution
 OUTPUT_FOLDER = "generated_animations"  # Output folder
 OUTPUT_VIDEO_FILE_PREFIX = "output"  # Output video file name
 ANIMATION_CLASS_ID = "RADIALIZOR"  # Name of the animation type

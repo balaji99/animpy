@@ -6,12 +6,12 @@ import anim_configs
 
 ### BEGIN setup
 # Global variables
-VIDEO_LENGTH = 600  # in seconds
-VIDEO_FRAME_RATE = 100  # Frame rate (fps) of the output video
+VIDEO_LENGTH = 5  # in seconds
+VIDEO_FRAME_RATE = 30  # Frame rate (fps) of the output video
 VIDEO_FRAME_SIZE = (1920, 1080)  # Output video resolution
 OUTPUT_FOLDER = "generated_animations"  # Output folder
 OUTPUT_VIDEO_FILE_PREFIX = "output"  # Output video file name
-ANIMATION_CLASS_ID = "RADIALIZOR"  # Name of the animation type
+ANIMATION_CLASS_ID = "CIRC_RADIALIZOR"  # Name of the animation type
 ### END setup
 
 
@@ -66,7 +66,6 @@ def main():
 
     # Define the codec and create VideoWriter object
     fourcc = cv2.VideoWriter_fourcc(*'mp4v')
-    print(f"Video size: {VIDEO_FRAME_SIZE}")
     frame_sink = cv2.VideoWriter(output_video_filename, fourcc, VIDEO_FRAME_RATE, VIDEO_FRAME_SIZE)
 
     animate(frame_sink, ANIMATION_CLASS_ID, VIDEO_FRAME_RATE, VIDEO_FRAME_SIZE, VIDEO_LENGTH)

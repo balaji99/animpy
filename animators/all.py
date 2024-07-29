@@ -1,3 +1,3 @@
 from . import blank
 from . import single_bezier_pf
-from . import radializor
+from . import circ_radializor

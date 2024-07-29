@@ -4,7 +4,7 @@ import animators.all as animators
 animator_classes = {
     "BLANK": animators.blank.blank,
     "SINGLE_BEZIER_PF": animators.single_bezier_pf.single_bezier_pf,
-    "RADIALIZOR": animators.radializor.radializor,
+    "CIRC_RADIALIZOR": animators.circ_radializor.radializor,
 }
 
 # Animation config dictionary
@@ -30,10 +30,10 @@ animator_configs = {
     },
 
     # Renders radial lines of circles
-    "RADIALIZOR": {
+    "CIRC_RADIALIZOR": {
         "angle_gap": 6, # degrees
         "render_time_gap": 0.01,
         "background_color": (255, 255, 255),
-        "line_width": 10,
+        "line_width": 1,
     },
 }
